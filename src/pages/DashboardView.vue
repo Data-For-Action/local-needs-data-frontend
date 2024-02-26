@@ -246,6 +246,6 @@ export default defineComponent({
 .dashboard {
   display: grid;
   grid-template-columns: 450px 1fr;
-  min-height: 60vh;
+  min-height: 80vh;
 }
 </style>

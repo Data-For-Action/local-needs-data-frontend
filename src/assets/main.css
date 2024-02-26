@@ -62,12 +62,10 @@ color:#fff;
 }
 
 .image {
-  background-image: url("src/assets/img/npc-background.png");
+  background-image: url("./img/npc-background.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-
-  
 }
 
 

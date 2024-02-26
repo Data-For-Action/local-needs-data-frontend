@@ -24,7 +24,7 @@ interface BaseComponentData {
   possible_columns: PossibleColumn[] | undefined
   possible_areas: Components.Schemas.PotentialFilter[] | undefined
   possible_times: Components.Schemas.PotentialFilter[] | undefined
-  selected_columns: PossibleColumn[]
+  selected_columns: Components.Schemas.PotentialColumn[]
   selected_areas: Components.Schemas.PotentialFilter[]
   selected_times: Components.Schemas.PotentialFilter[]
   data: Components.Schemas.ChartData | null
@@ -90,7 +90,7 @@ export default defineComponent({
       var params = {
         areas: this.selected_areas.map((item) => item.id),
         times: this.selected_times.map((item) => item.id),
-        columns: this.selected_columns.map((item) => item.id)
+        columns: this.selected_columns.map((item) => item.id.toString())
       } as Paths.LocalneedsApiDashboardDashboardPrepare.QueryParameters
       if (this.chart_type) {
         params.dashboard_type = this.chart_type
@@ -108,16 +108,16 @@ export default defineComponent({
     }
   },
   watch: {
-    selected_columns: function (newVal, oldVal) {
+    selected_columns: function () {
       this.fetchData()
     },
-    selected_areas: function (newVal, oldVal) {
+    selected_areas: function () {
       this.fetchData()
     },
-    selected_times: function (newVal, oldVal) {
+    selected_times: function () {
       this.fetchData()
     },
-    chart_type: function (newVal, oldVal) {
+    chart_type: function () {
       this.fetchData()
     }
   },

@@ -30,14 +30,27 @@
 </template>
 <script lang="ts">
 import { LGeoJson, LMap, LControl } from '@vue-leaflet/vue-leaflet'
+import type { StyleFunction } from '@vue-leaflet/vue-leaflet/components/geojson'
+import type { Feature, FeatureCollection } from 'geojson'
 import la_boundary from '../assets/data/uk_la_2023_buc.json'
 import 'leaflet/dist/leaflet.css'
-import { geoJson } from 'leaflet/dist/leaflet-src.esm'
+import { geoJson, LatLng } from 'leaflet/dist/leaflet-src.esm'
 import { scaleLinear } from 'd3-scale'
 import { interpolateViridis } from 'd3-scale-chromatic'
 import { quantize } from 'd3-interpolate'
 
 const BOUNDS = geoJson(la_boundary).getBounds()
+
+interface BaseComponentData {
+  zoom: number
+  center: LatLng
+  geojson: FeatureCollection
+  bounds: LatLng[]
+  maxBounds: LatLng[]
+  url: string
+  attribution: string
+  fillColor: string
+}
 
 export default {
   components: {
@@ -51,14 +64,14 @@ export default {
   data() {
     return {
       zoom: 5,
-      center: [0, 0],
+      center: LatLng(0, 0),
       geojson: la_boundary,
       bounds: BOUNDS,
       maxBounds: BOUNDS,
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       fillColor: 'red'
-    }
+    } as BaseComponentData
   },
   computed: {
     options() {
@@ -66,12 +79,11 @@ export default {
         onEachFeature: this.onEachFeatureFunction
       }
     },
-    styleFunction() {
-      const fillColor = this.fillColor // important! need touch fillColor in computed for re-calculate when change fillColor
+    styleFunction(): StyleFunction {
       // https://leafletjs.com/examples/choropleth/
-      return (item) => {
+      return (item: Feature) => {
         var color = 'grey'
-        if (item.properties.value) {
+        if (item.properties && item.properties.value) {
           color = this.colorRamp(item.properties.value)
         }
         return {
@@ -84,15 +96,17 @@ export default {
       }
     },
     featureData() {
-      if (!this.data) return {}
+      const dataUsed = this.data
+      if (!dataUsed) return {}
       return Object.fromEntries(
-        this.data.labels.map((label, index) => {
-          return [label, this.data.datasets[0].data[index]]
+        dataUsed.labels.map((label: string, index: number) => {
+          return [label, dataUsed.datasets[0].data[index]]
         })
       )
     },
     onEachFeatureFunction() {
-      return (feature, layer) => {
+      return (feature: Feature, layer) => {
+        if (!feature.properties) return
         var tooltip =
           '<div>Code:' +
           feature.properties.LAD23CD +
@@ -107,17 +121,20 @@ export default {
     },
     geoJsonWithData() {
       var featureData = this.featureData
-      var newGeojson = { ...this.geojson }
+      var newGeojson: FeatureCollection = { ...this.geojson }
       newGeojson.features = newGeojson.features.map((feature) => {
         const newFeature = { ...feature }
+        if (!feature.properties) return newFeature
         var name = feature.properties.LAD23NM
         var code = feature.properties.LAD23CD
-        if (featureData[code]) {
+        if (newFeature.properties && featureData[code]) {
           newFeature.properties['value'] = featureData[code]
-        } else if (featureData[name]) {
+        } else if (newFeature.properties && featureData[name]) {
           newFeature.properties['value'] = featureData[name]
-        } else {
+        } else if (newFeature.properties) {
           newFeature.properties['value'] = NaN
+        } else {
+          newFeature.properties = { value: NaN }
         }
         return newFeature
       })
@@ -127,9 +144,11 @@ export default {
       return this.geoJsonWithData.features
         .filter(
           (feature) =>
-            typeof feature.properties.value === 'number' && !isNaN(feature.properties.value)
+            feature.properties &&
+            typeof feature.properties.value === 'number' &&
+            !isNaN(feature.properties.value)
         )
-        .map((feature) => feature.properties.value)
+        .map((feature) => (feature.properties ? feature.properties.value : NaN))
     },
     minValue() {
       return Math.min(...this.values)
@@ -150,7 +169,7 @@ export default {
     onMapReady() {
       this.$refs.map.leafletObject.fitBounds(this.bounds)
     },
-    colorRamp(value) {
+    colorRamp(value: number) {
       var func = scaleLinear().domain([this.maxValue, this.minValue])
       return interpolateViridis(func(value))
     }

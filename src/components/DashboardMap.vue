@@ -138,7 +138,7 @@ export default {
       return Math.max(...this.values)
     },
     legendValues() {
-      return quantize(interpolateViridis, 8)
+      return quantize(interpolateViridis, 8).reverse()
     }
   },
   watch: {

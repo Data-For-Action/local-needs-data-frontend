@@ -26,7 +26,7 @@ export default defineComponent({
     <table class="table collapse near-black">
       <thead>
         <tr>
-          <th class="pa2 ba b--gray tl v-top bg-purple white-90">Column name</th>
+          <th class="pa2 ba b--gray tl v-top bg-purple ">Column name</th>
           <th
             v-for="(column, index) in columns"
             :key="index"
@@ -41,7 +41,7 @@ export default defineComponent({
           <th
             v-for="(column, index) in columns"
             :key="index"
-            class="pa2 ba  tl v-top "
+            class="pa2 ba tl v-top "
             :class="{ 'property-bg': isProperty(column), 'value-bg': isValue(column) }"
           >
             <select

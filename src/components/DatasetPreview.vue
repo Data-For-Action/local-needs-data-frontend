@@ -30,7 +30,7 @@ export default defineComponent({
           <th
             v-for="(column, index) in columns"
             :key="index"
-            class="pa2 ba b--gray tl v-top bg-purple white-90"
+            class="pa2 ba  tl v-top "
             :class="{ 'property-text-heading': isProperty(column), 'value-text-heading': isValue(column) }"
           >
             {{ column.name }}
@@ -41,7 +41,7 @@ export default defineComponent({
           <th
             v-for="(column, index) in columns"
             :key="index"
-            class="pa2 ba b--gray tl v-top near-black"
+            class="pa2 ba  tl v-top "
             :class="{ 'property-bg': isProperty(column), 'value-bg': isValue(column) }"
           >
             <select
@@ -60,11 +60,11 @@ export default defineComponent({
           </th>
         </tr>
         <tr>
-          <th class="pa2 ba b--gray tl v-top">Column description</th>
+          <th class="pa2 ba  tl v-top">Column description</th>
           <th
             v-for="(column, index) in columns"
             :key="index"
-            class="pa2 ba b--gray tl v-top near-black"
+            class="pa2 ba  tl v-top "
             :class="{ 'property-bg': isProperty(column), 'value-bg': isValue(column) }"
           >
             <textarea
@@ -83,7 +83,7 @@ export default defineComponent({
           <td
             v-for="(column, index) in columns"
             :key="index"
-            class="pa2 ba b--gray v-top white-90"
+            class=""
             :class="{ 'property-text': isProperty(column), 'value-text tr': isValue(column), 'tl': !isValue(column) }"
           >
             <span v-if="row[column.name] == ''" class="white-90">-- empty --</span>

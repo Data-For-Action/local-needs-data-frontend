@@ -3,17 +3,19 @@ import Multiselect from 'vue-multiselect'
 import api from '../components/client'
 import { defineComponent } from 'vue'
 import type { Components, Paths } from '../types/localneedsapi'
-import { Line } from 'vue-chartjs'
+import { Line, Bar } from 'vue-chartjs'
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend
 } from 'chart.js'
+import DashboardMap from '../components/DashboardMap.vue'
 
 interface PossibleColumn {
   dataset: string
@@ -28,16 +30,27 @@ interface BaseComponentData {
   selected_areas: Components.Schemas.PotentialFilter[]
   selected_times: Components.Schemas.PotentialFilter[]
   data: Components.Schemas.ChartData | null
-  chart_type: Components.Schemas.DashboardType | null
+  chart_type: Components.Schemas.DashboardType | null | 'measure_over_area_map'
 }
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  BarElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+)
 
 export default defineComponent({
   name: 'DashboardView',
   components: {
     Multiselect,
-    LineChart: Line
+    DashboardMap,
+    LineChart: Line,
+    BarChart: Bar
   },
   data() {
     return {
@@ -93,7 +106,11 @@ export default defineComponent({
         columns: this.selected_columns.map((item) => item.id.toString())
       } as Paths.LocalneedsApiDashboardDashboardPrepare.QueryParameters
       if (this.chart_type) {
-        params.dashboard_type = this.chart_type
+        if (this.chart_type == 'measure_over_area_map') {
+          params.dashboard_type = 'measure_over_area'
+        } else {
+          params.dashboard_type = this.chart_type
+        }
       }
       return params
     },
@@ -128,83 +145,107 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="">
-    <div class="mb3">
-      <h3>Chart type</h3>
-      <label class="db mb1"
-        ><input
-          type="radio"
-          id="line"
-          name="chart_type"
-          value="measure_over_time"
-          v-model="chart_type"
-        />
-        Compare measures over time</label
-      >
-      <label class="db mb1"
-        ><input
-          type="radio"
-          id="line"
-          name="chart_type"
-          value="area_over_time"
-          v-model="chart_type"
-        />
-        Compare areas over time</label
-      >
-      <label class="db mb1"
-        ><input
-          type="radio"
-          id="line"
-          name="chart_type"
-          value="measure_over_area"
-          v-model="chart_type"
-        />
-        Compare measures by area</label
-      >
+  <div class="dashboard">
+    <div class="">
+      <div class="mb3">
+        <h3>Chart type</h3>
+        <label class="db mb1"
+          ><input
+            type="radio"
+            id="line"
+            name="chart_type"
+            value="measure_over_time"
+            v-model="chart_type"
+          />
+          Compare measures over time</label
+        >
+        <label class="db mb1"
+          ><input
+            type="radio"
+            id="line"
+            name="chart_type"
+            value="area_over_time"
+            v-model="chart_type"
+          />
+          Compare areas over time</label
+        >
+        <label class="db mb1"
+          ><input
+            type="radio"
+            id="line"
+            name="chart_type"
+            value="measure_over_area"
+            v-model="chart_type"
+          />
+          Compare measures by area (bar chart)</label
+        >
+        <label class="db mb1"
+          ><input
+            type="radio"
+            id="line"
+            name="chart_type"
+            value="measure_over_area_map"
+            v-model="chart_type"
+          />
+          Compare measures by area (map)</label
+        >
+      </div>
+      <div class="mb3" v-if="chart_type">
+        <Multiselect
+          v-model="selected_columns"
+          placeholder="Select columns"
+          label="name"
+          track-by="id"
+          :options="possible_columns"
+          :multiple="true"
+          group-values="columns"
+          group-label="dataset"
+          :group-select="false"
+        >
+        </Multiselect>
+      </div>
+      <div class="mb3" v-if="possible_areas && possible_areas.length">
+        <Multiselect
+          v-model="selected_areas"
+          placeholder="Select areas"
+          label="name"
+          track-by="id"
+          :options="possible_areas"
+          :multiple="true"
+        >
+        </Multiselect>
+      </div>
+      <div class="mb3" v-if="possible_times && possible_times.length">
+        <Multiselect
+          v-model="selected_times"
+          placeholder="Select times"
+          label="name"
+          track-by="id"
+          :options="possible_times"
+          :multiple="true"
+        >
+        </Multiselect>
+      </div>
     </div>
-    <div class="mb3" v-if="chart_type">
-      <Multiselect
-        v-model="selected_columns"
-        placeholder="Select columns"
-        label="name"
-        track-by="id"
-        :options="possible_columns"
-        :multiple="true"
-        group-values="columns"
-        group-label="dataset"
-        :group-select="false"
-      >
-      </Multiselect>
-    </div>
-    <div class="mb3" v-if="possible_areas && possible_areas.length">
-      <Multiselect
-        v-model="selected_areas"
-        placeholder="Select areas"
-        label="name"
-        track-by="id"
-        :options="possible_areas"
-        :multiple="true"
-      >
-      </Multiselect>
-    </div>
-    <div class="mb3" v-if="possible_times && possible_times.length">
-      <Multiselect
-        v-model="selected_times"
-        placeholder="Select times"
-        label="name"
-        track-by="id"
-        :options="possible_times"
-        :multiple="true"
-      >
-      </Multiselect>
-    </div>
-  </div>
-  <div class="">
-    <div v-if="!data">
-      <p>Select data values to display a chart</p>
-    </div>
-    <div v-else>
-      <line-chart :data="data" :options="chartOptions" />
+    <div class="">
+      <div v-if="!data">
+        <p>Select data values to display a chart</p>
+      </div>
+      <dashboard-map v-else-if="chart_type == 'measure_over_area_map'" :data="data"></dashboard-map>
+      <bar-chart
+        v-else-if="chart_type == 'measure_over_area'"
+        :data="data"
+        :options="chartOptions"
+      />
+      <line-chart v-else :data="data" :options="chartOptions" />
     </div>
   </div>
 </template>
+
+<style scoped>
+.dashboard {
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  min-height: 60vh;
+}
+</style>

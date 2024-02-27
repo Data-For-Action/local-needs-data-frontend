@@ -16,7 +16,7 @@
       :options-style="styleFunction"
     ></l-geo-json>
     <l-control position="bottomleft" class="legend">
-      <ul>
+      <ul v-if="minValue">
         <li v-for="(value, index) in legendValues" :style="{ backgroundColor: value }" :key="index">
           <span class="legend-value" v-if="index == 0">{{ minValue }}</span>
           <span class="legend-value" v-else-if="index == legendValues.length - 1">{{
@@ -64,7 +64,7 @@ export default {
   data() {
     return {
       zoom: 5,
-      center: LatLng(0, 0),
+      center: [0, 0] as LatLng,
       geojson: la_boundary,
       bounds: BOUNDS,
       maxBounds: BOUNDS,
@@ -81,10 +81,11 @@ export default {
     },
     styleFunction(): StyleFunction {
       // https://leafletjs.com/examples/choropleth/
+      const colorRamp = this.colorRamp
       return (item: Feature) => {
         var color = 'grey'
         if (item.properties && item.properties.value) {
-          color = this.colorRamp(item.properties.value)
+          color = colorRamp(item.properties.value)
         }
         return {
           color: color,

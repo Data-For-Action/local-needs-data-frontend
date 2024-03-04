@@ -351,7 +351,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Ensuring box-sizing is border-box for all elements */
+
 *,
 *::before,
 *::after {
@@ -519,48 +519,21 @@ body {
 
 
 
-.kpi-container {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: 1200px; /* You can adjust this to fit your layout */
-}
-
-.kpi-card {
-  flex: 1; /* Each card will take up an equal amount of space */
-  margin: 10px; /* This adds space between the cards */
-  background-color: var(--primary-color); /* Orange background, can be changed for each card if desired */
-  color: white;
-  padding: 20px;
-  border-radius: 5px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
-}
-
-.kpi-value {
-  font-size: 3em;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.kpi-title, .kpi-subtitle {
-  font-size: 1em;
-}
 
 .save-button {
-  background-color: var(--secondary-color-bg); /* Green background */
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  padding: 15px 32px; /* Some padding */
-  text-align: center; /* Centered text */
-  text-decoration: none; /* No underline */
-  display: inline-block; /* Use inline-block */
-  font-size: 16px; /* Large text size */
+  background-color: var(--secondary-color-bg); 
+  border: none; 
+  color: white; 
+  padding: 15px 32px; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 16px; 
   margin: 4px 2px; /* Some space around the button */
-  cursor: pointer; /* Pointer/hand icon */
-  border-radius: 25px; /* Rounded corners */
-  transition: background 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Subtle shadow */
+  cursor: pointer; 
+  border-radius: 25px; 
+  transition: background 0.3s, box-shadow 0.3s; 
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
 }
 
 .save-button:hover {

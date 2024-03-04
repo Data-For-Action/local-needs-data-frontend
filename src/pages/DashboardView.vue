@@ -254,7 +254,7 @@ export default defineComponent({
 <iframe src='https://flo.uri.sh/visualisation/17020685/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17020685/?utm_source=embed&utm_campaign=visualisation/17020685' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 <iframe src='https://flo.uri.sh/visualisation/17023723/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17023723/?utm_source=embed&utm_campaign=visualisation/17023723' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 <iframe src='https://flo.uri.sh/visualisation/17023803/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17023803/?utm_source=embed&utm_campaign=visualisation/17023803' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
-<div class="twoCharts"></div>
+
 
 <div>
 <h1 class="property-text"> Below you can explore other data within the Databank</h1>
@@ -375,13 +375,17 @@ export default defineComponent({
 <style scoped>
 
 .dashboard {
-  display: grid;
-  
-  grid-template-columns: 450px 1fr;
+  display: grid;  
+  grid-template-columns: 1fr;
   min-height: 80vh;
 }
+@media(min-width:641){
+  .dashboard{
+    .grid-template-columns: 450px 1fr;
+  }
+}
 
-@media (max-width:740px) {
+@media (max-width:640px) {
   .dashboard{
   display: flex;
   flex-direction: column;
@@ -393,20 +397,14 @@ export default defineComponent({
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  
   margin: 0 auto;
-
   overflow: visible;
-  min-width: 1200px;
-  width: 100%;
+  width: 80%;
 }
 
 .kpi-card{
-  flex-basis: calc(33.333% - 20px);
+  flex-basis: 100%;
   margin: 10px;
-  
-  flex: 1; 
-  margin: 10px; 
   background-color: var(--primary-color); 
   color: white;
   padding: 20px;
@@ -416,11 +414,16 @@ export default defineComponent({
   
 }
 
+@media (min-width: 641px) {
+  .kpi-card {
+    flex-basis: calc(33.333% - 20px); 
+  }
+}
 
-
-@media (max-width: 740px) {
+@media (max-width: 640px) {
   .kpi-card {
     flex-basis: 100%;
+    width: 60%;
   }
 }
 
@@ -431,13 +434,26 @@ export default defineComponent({
 }
 
 .flourish-embed-iframe {
-  flex-basis: 48%; 
-  height: 600px; 
+  display: block; 
+  width: 100%; 
+  height: auto; 
 }
 
-@media (max-width: 768px) {
+@media (min-width: 641px) {
   .twoCharts {
-    flex-direction: column; /* Stacks the charts vertically on smaller screens */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .flourish-embed-iframe {
+    flex-basis: 48%;
+    height: 600px; /* Fixed height for larger screens */
+  }
+}
+
+@media (max-width: 640px) {
+  .twoCharts {
+    flex-direction: column; 
   }
 }
 

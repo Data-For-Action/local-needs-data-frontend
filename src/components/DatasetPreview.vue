@@ -26,7 +26,7 @@ export default defineComponent({
     <table class="table collapse near-black">
       <thead>
         <tr>
-          <th class="pa2 ba b--gray tl v-top bg-purple ">Column name</th>
+          <th class="pa2 ba b--gray tl v-top bg-purple white-90 ">Column name</th>
           <th
             v-for="(column, index) in columns"
             :key="index"
@@ -83,7 +83,7 @@ export default defineComponent({
           <td
             v-for="(column, index) in columns"
             :key="index"
-            class=""
+            class="ba b--dashed"
             :class="{ 'property-text': isProperty(column), 'value-text tr': isValue(column), 'tl': !isValue(column) }"
           >
             <span v-if="row[column.name] == ''" class="white-90">-- empty --</span>

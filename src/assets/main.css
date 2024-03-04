@@ -53,13 +53,13 @@ h1, h2, h3, h4, h5, h6, ul.h1, .h2, .h3, .h4, .h5, .h6 {
 
 h1, .h1 {
   font-size: 28px;
-  line-height: 48px;
+  line-height: 36px;
   letter-spacing: -0.1px
 }
 
 @media (min-width: 641px) {
   h1, .h1 {
-    font-size: 44px;
+    font-size: 36px;
     line-height: 54px;
     letter-spacing: 0px
   }
@@ -182,7 +182,7 @@ label.required:after {
 }
 
 .property-bg {
-  color: #9004ac;
+  color: #881866;
   background-color: #fff;
 
 
@@ -212,8 +212,11 @@ label.required:after {
 
 }
 
+.standard-purple-text{
+  color: #881866
+}
 .image {
-  background-image: url("./img/npc-background.png");
+  
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -367,11 +370,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #662583;
-  /* Purple background for navbar, can adjust */
-  padding: 5px;
+  background-color: var(--primary-color);
+  padding: 0.1em;
   color: #fff;
-  height: relative;
+  max-height: 80px;
+  
 }
 
 .navbar ul {
@@ -386,34 +389,45 @@ body {
 
 
 .navbar h1 {
-  flex: 2;
-  /* Adjusts the flex-grow value to ensure it takes up more space and centers */
+  flex: 1;
   text-align: center;
 }
+
+@media (max-width: 640px) {
+  .navbar{
+    flex-direction: column;
+    text-align: center
+  }
+
+  .navbar ul {
+    flex-direction: column
+  }
+}
+
 
 .main-container {
   margin: 0 auto;
   width: 80%;
   /* Adjust as needed */
-  padding-top: 20px;
-  /* Adjust based on navbar height */
+  padding-top: 10px;
+ 
 }
 
 .main-text-container {
   margin: 0 auto;
   width: 90%;
-  /* Adjust as needed */
-  padding-top: 20px;
-  /* Adjust based on navbar height */
+  padding-top: 10px;
+ 
 }
 
-/* Footer syling - neutral with responsiveness */
+
 
 .footer {
   background: #fff;
   padding: 30px 0px;
   font-family: 'Roboto', sans-serif;
   text-align: center;
+  width: 100%;
 }
 
 .footer .row {
@@ -448,10 +462,11 @@ body {
   margin: 0% 1%;
 }
 
-@media (max-width:720px) {
+@media (max-width:640px) {
   .footer {
     text-align: left;
     padding: 5%;
+    width: 100%;
   }
 
   .footer .row ul li {
@@ -498,4 +513,69 @@ body {
 
 .multiselect--active {
   z-index: 9999999;
+  background-color: #b012a0;
 }
+
+
+
+
+.kpi-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px; /* You can adjust this to fit your layout */
+}
+
+.kpi-card {
+  flex: 1; /* Each card will take up an equal amount of space */
+  margin: 10px; /* This adds space between the cards */
+  background-color: var(--primary-color); /* Orange background, can be changed for each card if desired */
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+.kpi-value {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.kpi-title, .kpi-subtitle {
+  font-size: 1em;
+}
+
+.save-button {
+  background-color: var(--secondary-color-bg); /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 15px 32px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* No underline */
+  display: inline-block; /* Use inline-block */
+  font-size: 16px; /* Large text size */
+  margin: 4px 2px; /* Some space around the button */
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 25px; /* Rounded corners */
+  transition: background 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Subtle shadow */
+}
+
+.save-button:hover {
+  background: linear-gradient(45deg, #57a957, #4CAF50); /* Gradient background on hover */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Larger shadow on hover */
+}
+
+.save-container{
+  
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Centre horizontally */
+    align-items: center; /* Centre vertically */
+    height: 200px; /* Set to desired height */
+}
+
+
+
+  

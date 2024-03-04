@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <h1>Local Needs Databank upload</h1>
+    <h1>Local Needs Databank</h1>
     <ul>
       <li><router-link to="/" class="h4 white-80 hover-pink">Home</router-link></li>
       <li><router-link to="/dashboard" class="h4 white-80 hover-pink">Dashboard</router-link></li>

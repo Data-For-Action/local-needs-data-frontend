@@ -233,8 +233,8 @@ export default defineComponent({
 </script>
 
 <template>
-  <div>
-    <h3> Welcome to the Local Needs Dashboard. </h3>
+  <div class ="tc">
+    <h3 class="tc"> Welcome to the Local Needs Dashboard. </h3>
       <p>Here you will find curated data for you to explore and you will also find tools to create your own charts and maps
 
       </p>
@@ -268,7 +268,7 @@ export default defineComponent({
 
 </div>
   
-  <div class="pa5 pt7 tc property-text">
+  <div class="pa5 pt2 tc property-text">
   <h3> 
         Create your own charts and maps below
       </h3>

@@ -405,15 +405,15 @@ export default defineComponent({
   flex-basis: calc(33.333% - 20px);
   margin: 10px;
   
-  flex: 1; /* Each card will take up an equal amount of space */
-  margin: 10px; /* This adds space between the cards */
-  background-color: var(--primary-color); /* Orange background, can be changed for each card if desired */
+  flex: 1; 
+  margin: 10px; 
+  background-color: var(--primary-color); 
   color: white;
   padding: 20px;
   border-radius: 5px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
-  /* ... other styles as before ... */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  
 }
 
 
@@ -426,13 +426,13 @@ export default defineComponent({
 
 .twoCharts {
   display: flex;
-  justify-content: space-around; /* Adjusts the spacing between the charts */
-  align-items: center; /* Centers the charts vertically */
+  justify-content: space-around; 
+  align-items: center; 
 }
 
 .flourish-embed-iframe {
-  flex-basis: 48%; /* Adjusts the width of each chart to fit side by side */
-  height: 600px; /* Optional: Adjust height as needed */
+  flex-basis: 48%; 
+  height: 600px; 
 }
 
 @media (max-width: 768px) {

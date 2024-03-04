@@ -17,6 +17,7 @@ import {
 } from 'chart.js'
 import DashboardMap from '../components/DashboardMap.vue'
 
+
 interface PossibleColumn {
   dataset: string
   columns: Components.Schemas.PotentialColumn[]
@@ -54,6 +55,23 @@ export default defineComponent({
   },
   data() {
     return {
+      kpiData: [
+      {
+        title: "Spend on Health and Social Care ",
+        value: "£28.3m",
+        subtitle: "Total Spend on Adult Social Care in England 2022-23 "
+      },
+      {
+        title: "Grants to Voluntary Organisations",
+        value: "£200k",
+        subtitle: "Grants to Voluntary Organisations via LA for Health and Social Care"
+      },
+      {
+        title: "Requests for Support ",
+        value: "611k",
+        subtitle: "Number of requests for support received from new clients	18-64 202/23		"
+      }
+    ],
       possible_columns: [],
       possible_areas: [],
       possible_times: [],
@@ -96,7 +114,9 @@ export default defineComponent({
             this.data = data.data
           }
         })
-    }
+    }, 
+   
+
   },
   computed: {
     queryParameters() {
@@ -114,15 +134,80 @@ export default defineComponent({
       }
       return params
     },
-    chartOptions() {
-      return {
-        scales: {
-          y: {
-            beginAtZero: true
+  
+  chartOptions() {
+  
+    const primaryColorBg = '#C7215D';
+    const secondaryColorBg = '#881866';
+    const primaryColor = '#881866';
+    const secondaryColor = '#dd35a5';
+    
+
+    return {
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: {
+            drawBorder: true,
+            color: '#808080', 
+            lineWidth: 1
+          },
+          ticks: {
+            color: primaryColor, 
+            font: {
+              size: 14,
+            }
+          }
+        },
+        x: {
+          grid: {
+            drawBorder: true,
+            color: secondaryColorBg, 
+            lineWidth: 1
+          },
+          ticks: {
+            color: primaryColor, 
+            font: {
+              size: 14,
+            }
           }
         }
+      },
+      plugins: {
+        
+        legend: {
+          labels: {
+            color: primaryColor, 
+            font: {
+              
+              size: 12
+            }
+          }
+        }
+      },
+      elements: {
+        line: {
+          borderColor: primaryColorBg, 
+          borderWidth: 2,
+          backgroundColor: secondaryColor, 
+          fill: true, 
+        },
+        point: {
+          backgroundColor: primaryColorBg, 
+          borderColor: '#fff',
+          borderWidth: 2,
+          radius: 5
+        },
+        bar: {
+          hoverBackgroundColor: secondaryColorBg, 
+          borderColor: primaryColorBg, 
+          borderWidth: 1,
+        }
       }
-    }
+    };
+  }
+
+
   },
   watch: {
     selected_columns: function () {
@@ -142,12 +227,56 @@ export default defineComponent({
     this.fetchData()
   }
 })
+
+
+
 </script>
 
 <template>
+  <div>
+    <h3> Welcome to the Local Needs Dashboard. </h3>
+      <p>Here you will find curated data for you to explore and you will also find tools to create your own charts and maps
+
+      </p>
+  </div>
+  <div class="kpi-container">
+    <div class="kpi-card" v-for="(kpi, index) in kpiData" :key="index">
+      <div class="kpi-title">{{ kpi.title }}</div>
+      <div class="kpi-value">{{ kpi.value }}</div>
+      <div class="kpi-subtitle">{{ kpi.subtitle }}</div>
+      
+    </div>
+   
+  </div>
+  <div class="save-container">
+  <button class="save-button" @click="saveAsSvg(index)">Save as SVG</button>
+</div>
+<iframe src='https://flo.uri.sh/visualisation/17020685/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17020685/?utm_source=embed&utm_campaign=visualisation/17020685' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+<iframe src='https://flo.uri.sh/visualisation/17023723/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17023723/?utm_source=embed&utm_campaign=visualisation/17023723' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+<iframe src='https://flo.uri.sh/visualisation/17023803/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17023803/?utm_source=embed&utm_campaign=visualisation/17023803' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+<div class="twoCharts"></div>
+
+<div>
+<h1 class="property-text"> Below you can explore other data within the Databank</h1>
+<h5> To create your own charts</h5>
+<ol><li>Choose a chart type</li>
+  <li>Select the dataset you would like to explore using the drop down</li>
+  <li>Select either areas or times to explore using the further drop downs</li>
+
+
+</ol>
+
+</div>
+  
+  <div class="pa5 pt7 tc property-text">
+  <h3> 
+        Create your own charts and maps below
+      </h3>
+    </div>
   <div class="dashboard">
-    <div class="">
-      <div class="mb3">
+    
+    <div class="pt1">
+      <div class="property-text">
         <h3>Chart type</h3>
         <label class="db mb1"
           ><input
@@ -190,7 +319,7 @@ export default defineComponent({
           Compare measures by area (map)</label
         >
       </div>
-      <div class="mb3" v-if="chart_type">
+      <div class="mb3 pt4" v-if="chart_type">
         <Multiselect
           v-model="selected_columns"
           placeholder="Select columns"
@@ -227,9 +356,10 @@ export default defineComponent({
         </Multiselect>
       </div>
     </div>
-    <div class="">
+    
+    <div class="pa3">
       <div v-if="!data">
-        <p>Select data values to display a chart</p>
+        <h3 class="standard-purple-text">&larr; Select chart type and dataset to display a chart</h3>
       </div>
       <dashboard-map v-else-if="chart_type == 'measure_over_area_map'" :data="data"></dashboard-map>
       <bar-chart
@@ -243,9 +373,72 @@ export default defineComponent({
 </template>
 
 <style scoped>
+
 .dashboard {
   display: grid;
+  
   grid-template-columns: 450px 1fr;
   min-height: 80vh;
 }
+
+@media (max-width:740px) {
+  .dashboard{
+  display: flex;
+  flex-direction: column;
+
+  }
+}
+
+.kpi-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  margin: 0 auto;
+
+  overflow: visible;
+  min-width: 1200px;
+  width: 100%;
+}
+
+.kpi-card{
+  flex-basis: calc(33.333% - 20px);
+  margin: 10px;
+  
+  flex: 1; /* Each card will take up an equal amount of space */
+  margin: 10px; /* This adds space between the cards */
+  background-color: var(--primary-color); /* Orange background, can be changed for each card if desired */
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+  /* ... other styles as before ... */
+}
+
+
+
+@media (max-width: 740px) {
+  .kpi-card {
+    flex-basis: 100%;
+  }
+}
+
+.twoCharts {
+  display: flex;
+  justify-content: space-around; /* Adjusts the spacing between the charts */
+  align-items: center; /* Centers the charts vertically */
+}
+
+.flourish-embed-iframe {
+  flex-basis: 48%; /* Adjusts the width of each chart to fit side by side */
+  height: 600px; /* Optional: Adjust height as needed */
+}
+
+@media (max-width: 768px) {
+  .twoCharts {
+    flex-direction: column; /* Stacks the charts vertically on smaller screens */
+  }
+}
+
 </style>

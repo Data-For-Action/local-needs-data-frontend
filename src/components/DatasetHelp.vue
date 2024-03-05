@@ -39,7 +39,7 @@
     <a href="/data1.csv" download="DataFile1.csv" class="download-button">Download Simple Time based example</a>
 
     
-    <a href="/data2.csv" download="DataFile2.csv" class="download-button">Download Location based example</a>
+    <a href="/local-needs-data-frontend/data2.csv" download="DataFile2.csv" class="download-button">Download Location based example</a>
   </div>
   </div>
 

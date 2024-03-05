@@ -182,6 +182,8 @@ export default {
 .local-needs-leaflet-container {
   background: transparent;
   font-family: 'Roboto', sans-serif;
+  height: 800px;
+ 
 }
 
 .legend {

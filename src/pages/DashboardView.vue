@@ -275,7 +275,7 @@ export default defineComponent({
     </div>
   <div class="dashboard">
     
-    <div class="pt1">
+    <div class="">
       <div class="property-text">
         <h3>Chart type</h3>
         <label class="db mb1"
@@ -376,14 +376,15 @@ export default defineComponent({
 
 .dashboard {
   display: grid;  
-  grid-template-columns: 1fr;
+  grid-template-columns: 2fr;
   min-height: 80vh;
 }
-@media(min-width:641){
-  .dashboard{
-    .grid-template-columns: 450px 1fr;
-  }
-}
+
+@media (min-width: 641px) {
+  .dashboard {
+    grid-template-columns: 450px 1fr;
+    
+  }}
 
 @media (max-width:640px) {
   .dashboard{

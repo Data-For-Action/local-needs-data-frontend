@@ -1,0 +1,305 @@
+Local Authority,Region,Number of parcels for adults,Number of parcels for children,Total number of parcels distributed,Number of distribution centres
+Amber Valley,East Midlands,431,154,585,1
+Bassetlaw,East Midlands,47,36,83,1
+Blaby,East Midlands,468,359,827,1
+Bolsover,East Midlands,1187,640,1827,1
+Boston,East Midlands,1578,925,2503,2
+Broxtowe,East Midlands,3096,2306,5402,4
+Charnwood,East Midlands,1849,936,2785,3
+Chesterfield,East Midlands,3532,1143,4675,5
+Derbyshire Dales,East Midlands,0,0,0,0
+Erewash,East Midlands,1585,916,2501,2
+Gedling,East Midlands,5234,3397,8631,4
+Harborough,East Midlands,654,466,1120,1
+Hinckley and Bosworth,East Midlands,3587,1906,5493,8
+Leicester,East Midlands,1750,806,2556,11
+Lincoln,East Midlands,3329,1677,5006,7
+Mansfield,East Midlands,2042,1447,3489,3
+Newark and Sherwood,East Midlands,2339,1588,3927,2
+North East Derbyshire,East Midlands,1898,1153,3051,2
+North Kesteven,East Midlands,0,0,0,0
+North Northamptonshire,East Midlands,4999,3415,8414,4
+North West Leicestershire,East Midlands,2589,1609,4198,5
+Nottingham,East Midlands,8485,5507,13992,8
+Oadby and Wigston,East Midlands,1696,1120,2816,1
+Rutland,East Midlands,736,652,1388,2
+South Derbyshire,East Midlands,120,50,170,1
+South Kesteven,East Midlands,4750,2985,7735,4
+West Northamptonshire,East Midlands,4522,4092,8614,2
+Basildon,East of England,1001,852,1853,1
+Bedford,East of England,4992,2955,7947,8
+Braintree,East of England,3302,2758,6060,7
+Breckland,East of England,4638,3095,7733,6
+Brentwood,East of England,1622,1006,2628,2
+Broadland,East of England,522,313,835,3
+Broxbourne,East of England,5854,4733,10587,5
+Cambridge,East of England,5453,3245,8698,7
+Central Bedfordshire,East of England,2674,2410,5084,4
+Chelmsford,East of England,2887,2276,5163,6
+Colchester,East of England,6196,4236,10432,3
+Dacorum,East of England,3385,2372,5757,7
+East Cambridgeshire,East of England,2091,1440,3531,4
+East Hertfordshire,East of England,1552,765,2317,1
+East Suffolk,East of England,6454,3720,10174,15
+Epping Forest,East of England,1132,1089,2221,5
+Fenland,East of England,4061,2010,6071,3
+Great Yarmouth,East of England,0,0,0,0
+Harlow,East of England,3992,2311,6303,2
+Hertsmere,East of England,2425,1671,4096,2
+Huntingdonshire,East of England,3411,2364,5775,7
+King's Lynn and West Norfolk,East of England,3937,2252,6189,3
+Mid Suffolk,East of England,164,131,295,1
+North Hertfordshire,East of England,2851,2125,4976,5
+North Norfolk,East of England,2438,1507,3945,6
+Norwich,East of England,7418,4458,11876,11
+Peterborough,East of England,6498,3502,10000,9
+Rochford,East of England,178,171,349,1
+South Cambridgeshire,East of England,575,459,1034,3
+South Norfolk,East of England,1747,989,2736,10
+Southend-on-Sea,East of England,3408,2768,6176,6
+St Albans,East of England,2183,1874,4057,7
+Tendring,East of England,1376,1080,2456,2
+Three Rivers,East of England,934,856,1790,5
+Thurrock,East of England,3775,2928,6703,12
+Uttlesford,East of England,995,596,1591,4
+Watford,East of England,4506,2972,7478,5
+Welwyn Hatfield,East of England,1966,1323,3289,1
+West Suffolk,East of England,1265,675,1940,1
+Barking and Dagenham,London,2736,2056,4792,4
+Barnet,London,6386,3599,9985,3
+Bexley,London,5902,4293,10195,5
+Brent,London,3505,1548,5053,2
+Bromley,London,4158,2928,7086,4
+Camden,London,8234,2433,10667,3
+Croydon,London,1904,822,2726,1
+Ealing,London,8726,5679,14405,8
+Enfield,London,5831,4172,10003,1
+Greenwich,London,5557,4400,9957,9
+Hackney,London,6922,2269,9191,6
+Hammersmith and Fulham,London,7968,3956,11924,3
+Haringey,London,476,199,675,2
+Harrow,London,1869,1245,3114,3
+Havering,London,4832,3982,8814,6
+Hillingdon,London,3193,1966,5159,10
+Hounslow,London,330,164,494,1
+Islington,London,3990,1558,5548,1
+Kensington and Chelsea,London,1661,533,2194,1
+Kingston upon Thames,London,4407,2500,6907,7
+Lambeth,London,11995,6988,18983,7
+Lewisham,London,6015,3284,9299,5
+Merton,London,4064,2829,6893,4
+Newham,London,2543,1565,4108,6
+Redbridge,London,3707,2918,6625,4
+Richmond upon Thames,London,1629,853,2482,4
+Southwark,London,4354,2540,6894,7
+Sutton,London,1480,838,2318,4
+Wandsworth,London,3983,2529,6512,5
+Westminster,London,1060,299,1359,1
+County Durham,North East,11510,7011,18521,33
+Gateshead,North East,5305,2732,8037,4
+Hartlepool,North East,2324,1024,3348,1
+Middlesbrough,North East,5255,3339,8594,8
+Newcastle upon Tyne,North East,23679,14829,38508,5
+Northumberland,North East,575,388,963,1
+Redcar and Cleveland,North East,4104,2303,6407,12
+South Tyneside,North East,0,0,0,0
+Stockton-on-Tees,North East,4972,2846,7818,4
+Sunderland,North East,4313,2011,6324,13
+Allerdale,North West,2928,1648,4576,4
+Barrow-in-Furness,North West,3625,2545,6170,1
+Blackburn with Darwen,North West,6371,4914,11285,1
+Bolton,North West,1723,1469,3192,3
+Cheshire East,North West,2069,2327,4396,4
+Cheshire West and Chester,North West,10047,6447,16494,19
+Copeland,North West,1987,896,2883,3
+Fylde,North West,2158,1185,3343,3
+Halton,North West,4261,2679,6940,12
+Knowsley,North West,6130,5209,11339,18
+Lancaster,North West,5457,3678,9135,3
+Liverpool,North West,18089,11089,29178,22
+Manchester,North West,11256,7607,18863,18
+Oldham,North West,5420,3180,8600,4
+Ribble Valley,North West,606,483,1089,2
+Rochdale,North West,8842,4407,13249,3
+Salford,North West,4319,3439,7758,7
+Sefton,North West,11411,7677,19088,17
+South Lakeland,North West,610,467,1077,3
+St. Helens,North West,5316,3162,8478,4
+Stockport,North West,8423,5991,14414,6
+Tameside,North West,5772,4145,9917,8
+Trafford,North West,5536,3777,9313,6
+Warrington,North West,5777,3062,8839,8
+West Lancashire,North West,1796,1237,3033,4
+Wigan,North West,3563,2234,5797,5
+Wirral,North West,10343,5432,15775,16
+Antrim and Newtownabbey,Northern Ireland,3018,2105,5123,5
+Ards and North Down,Northern Ireland,1957,1426,3383,4
+"Armagh City, Banbridge and Craigavon",Northern Ireland,3031,2180,5211,5
+Belfast,Northern Ireland,6613,5170,11783,11
+Causeway Coast and Glens,Northern Ireland,2548,1544,4092,4
+Derry City and Strabane,Northern Ireland,2807,2070,4877,2
+Fermanagh and Omagh,Northern Ireland,1221,863,2084,5
+Lisburn and Castlereagh,Northern Ireland,2210,1776,3986,2
+Mid and East Antrim,Northern Ireland,2367,1588,3955,5
+Mid Ulster,Northern Ireland,388,257,645,2
+"Newry, Mourne and Down",Northern Ireland,0,0,0,0
+Aberdeen City,Scotland,3667,1775,5442,10
+Aberdeenshire,Scotland,4393,2193,6586,6
+Angus,Scotland,3256,1467,4723,3
+City of Edinburgh,Scotland,17735,8456,26191,17
+Dumfries and Galloway,Scotland,3160,790,3950,2
+Dundee City,Scotland,9766,5571,15337,4
+East Ayrshire,Scotland,6187,3426,9613,8
+East Dunbartonshire,Scotland,3084,1188,4272,3
+East Lothian,Scotland,3620,2572,6192,1
+East Renfrewshire,Scotland,2988,1754,4742,2
+Falkirk,Scotland,4495,2441,6936,1
+Fife,Scotland,11578,7028,18606,9
+Glasgow City,Scotland,24316,14965,39281,19
+Highland,Scotland,6487,2616,9103,11
+Inverclyde,Scotland,5746,1880,7626,3
+Midlothian,Scotland,2307,2090,4397,1
+Moray,Scotland,71,39,110,1
+Na h-Eileanan Siar,Scotland,419,198,617,2
+North Ayrshire,Scotland,6858,2465,9323,24
+North Lanarkshire,Scotland,4009,2131,6140,5
+Orkney Islands,Scotland,538,394,932,1
+Perth and Kinross,Scotland,4200,2026,6226,2
+Renfrewshire,Scotland,7452,3039,10491,5
+Scottish Borders,Scotland,541,199,740,1
+Shetland Islands,Scotland,1060,308,1368,1
+South Ayrshire,Scotland,4976,2144,7120,8
+South Lanarkshire,Scotland,10168,5504,15672,10
+West Dunbartonshire,Scotland,4,2,6,1
+West Lothian,Scotland,4464,2391,6855,16
+Adur,South East,1459,650,2109,2
+Arun,South East,4198,2268,6466,3
+Basingstoke and Deane,South East,3105,1668,4773,3
+Bracknell Forest,South East,3165,2444,5609,2
+Brighton and Hove,South East,1577,986,2563,1
+Buckinghamshire,South East,5514,3168,8682,14
+Cherwell,South East,4500,3422,7922,5
+Chichester,South East,2067,1576,3643,4
+Dover,South East,3876,2423,6299,8
+East Hampshire,South East,898,788,1686,1
+Eastbourne,South East,9991,5127,15118,9
+Elmbridge,South East,5587,3329,8916,7
+Epsom and Ewell,South East,1788,1374,3162,2
+Fareham,South East,0,0,0,0
+Folkestone and Hythe,South East,2439,1532,3971,3
+Gravesham,South East,2383,1654,4037,3
+Hart,South East,1036,607,1643,3
+Hastings,South East,6929,4634,11563,1
+Horsham,South East,1786,1132,2918,10
+Isle of Wight,South East,3832,2421,6253,6
+Medway,South East,4647,3564,8211,9
+Mid Sussex,South East,2450,2095,4545,2
+Mole Valley,South East,1669,1260,2929,2
+New Forest,South East,2834,2135,4969,3
+Portsmouth,South East,6151,3528,9679,4
+Reigate and Banstead,South East,937,633,1570,2
+Rother,South East,4316,2606,6922,3
+Runnymede,South East,2583,1908,4491,5
+Rushmoor,South East,2220,1355,3575,3
+Sevenoaks,South East,522,531,1053,1
+Slough,South East,3319,1970,5289,4
+Spelthorne,South East,1,1,2,1
+Swale,South East,3415,1938,5353,5
+Tandridge,South East,911,575,1486,2
+Test Valley,South East,3513,2546,6059,13
+Tonbridge and Malling,South East,0,0,0,0
+Tunbridge Wells,South East,0,0,0,0
+Vale of White Horse,South East,0,0,0,0
+Waverley,South East,875,776,1651,3
+Wealden,South East,3283,2966,6249,4
+West Berkshire,South East,3333,2046,5379,5
+West Oxfordshire,South East,1756,1454,3210,1
+Woking,South East,2865,1797,4662,4
+Wokingham,South East,1491,1217,2708,1
+Worthing,South East,1508,686,2194,1
+Bath and North East Somerset,South West,5978,3957,9935,14
+"Bournemouth, Christchurch and Poole",South West,8745,5048,13793,8
+"Bristol, City of",South West,10286,6449,16735,12
+Cheltenham,South West,2272,1505,3777,1
+Cornwall,South West,11625,7184,18809,18
+Cotswold,South West,3375,2985,6360,8
+Dorset,South West,1379,897,2276,3
+East Devon,South West,0,0,0,0
+Exeter,South West,5857,2677,8534,3
+Forest of Dean,South West,2947,1764,4711,6
+Gloucester,South West,5398,2714,8112,1
+North Devon,South West,3373,2070,5443,3
+North Somerset,South West,5293,3595,8888,14
+Plymouth,South West,6309,3192,9501,2
+Sedgemoor,South West,4869,2921,7790,5
+Somerset West and Taunton,South West,3697,2675,6372,3
+South Gloucestershire,South West,3997,3069,7066,5
+South Hams,South West,617,675,1292,1
+Stroud,South West,2414,1495,3909,9
+Swindon,South West,0,0,0,0
+Teignbridge,South West,409,347,756,2
+Tewkesbury,South West,1464,1150,2614,3
+Torridge,South West,2520,1667,4187,1
+West Devon,South West,843,484,1327,1
+Wiltshire,South West,6731,4326,11057,12
+Blaenau Gwent,Wales,2954,1478,4432,6
+Bridgend,Wales,4371,2257,6628,10
+Caerphilly,Wales,5692,3253,8945,6
+Cardiff,Wales,9216,5847,15063,9
+Carmarthenshire,Wales,6360,4462,10822,5
+Ceredigion,Wales,1157,805,1962,1
+Conwy,Wales,984,663,1647,2
+Denbighshire,Wales,2481,1818,4299,4
+Flintshire,Wales,4570,3502,8072,7
+Gwynedd,Wales,2794,1770,4564,4
+Isle of Anglesey,Wales,2742,1778,4520,4
+Merthyr Tydfil,Wales,2228,1392,3620,4
+Monmouthshire,Wales,2057,1175,3232,4
+Neath Port Talbot,Wales,4414,2710,7124,6
+Newport,Wales,2494,1538,4032,4
+Pembrokeshire,Wales,2026,1751,3777,5
+Powys,Wales,2154,996,3150,7
+Rhondda Cynon Taf,Wales,8380,4408,12788,22
+Swansea,Wales,5869,3365,9234,6
+Torfaen,Wales,4499,2377,6876,5
+Vale of Glamorgan,Wales,3187,2324,5511,6
+Wrexham,Wales,3724,2093,5817,8
+Birmingham,West Midlands,26840,12808,39648,16
+Cannock Chase,West Midlands,3628,1935,5563,9
+Coventry,West Midlands,17549,11115,28664,18
+Lichfield,West Midlands,2088,1416,3504,3
+Malvern Hills,West Midlands,1816,1160,2976,4
+Newcastle-under-Lyme,West Midlands,3562,1864,5426,7
+Nuneaton and Bedworth,West Midlands,4207,2697,6904,8
+Redditch,West Midlands,2093,839,2932,3
+Rugby,West Midlands,3261,2005,5266,4
+Sandwell,West Midlands,5824,3670,9494,4
+Shropshire,West Midlands,4435,2848,7283,4
+Solihull,West Midlands,1142,906,2048,1
+South Staffordshire,West Midlands,252,155,407,2
+Stafford,West Midlands,36,31,67,1
+Staffordshire Moorlands,West Midlands,1498,1090,2588,4
+Stoke-on-Trent,West Midlands,8160,5091,13251,14
+Stratford-on-Avon,West Midlands,2779,1550,4329,10
+Tamworth,West Midlands,2498,1480,3978,2
+Walsall,West Midlands,1246,1137,2383,3
+Warwick,West Midlands,4093,2151,6244,7
+Wolverhampton,West Midlands,26,13,39,1
+Worcester,West Midlands,5077,3127,8204,1
+Wychavon,West Midlands,2106,1415,3521,3
+Wyre Forest,West Midlands,2672,1752,4424,1
+Barnsley,Yorkshire and The Humber,2826,1710,4536,12
+Bradford,Yorkshire and The Humber,7655,5207,12862,8
+Craven,Yorkshire and The Humber,0,0,0,0
+Doncaster,Yorkshire and The Humber,3431,1705,5136,3
+East Riding of Yorkshire,Yorkshire and The Humber,2217,1350,3567,1
+Harrogate,Yorkshire and The Humber,1672,979,2651,2
+"Kingston upon Hull, City of",Yorkshire and The Humber,3445,1460,4905,3
+Leeds,Yorkshire and The Humber,18659,12842,31501,27
+North Lincolnshire,Yorkshire and The Humber,2957,1660,4617,4
+Rotherham,Yorkshire and The Humber,3276,1441,4717,2
+Ryedale,Yorkshire and The Humber,1546,932,2478,3
+Selby,Yorkshire and The Humber,3278,2296,5574,4
+Sheffield,Yorkshire and The Humber,9977,5408,15385,12
+Wakefield,Yorkshire and The Humber,3645,1996,5641,3
+York,Yorkshire and The Humber,2930,2095,5025,5

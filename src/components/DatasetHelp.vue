@@ -1,7 +1,6 @@
 <template>
-  <section class="mw100 mw100-ns center pl3 pa3 ph5-ns">
-    <!-- Background image for description -->
-    <div class="image">
+  <section class="mw100 mw100-ns center pl3 pa2 ph5-ns">
+        <div class="image">
       <div class="w100 mw100 mw100-ns center pa3 ph5-ns">
         <h3 class="h3m- font-awesome near-black">
           Welcome to the NPC local Needs Databank metadata tool
@@ -34,6 +33,42 @@
           </li>
         </ol>
       </div>
+      <div class="tc">
+    <h3>For an example of what your data might look like please use the buttons below to download a sample csv with data</h3>    
+    <div class="button-container">
+    <a href="/data1.csv" download="DataFile1.csv" class="download-button">Download Simple Time based example</a>
+
+    
+    <a href="/data2.csv" download="DataFile2.csv" class="download-button">Download Location based example</a>
+  </div>
+  </div>
+
     </div>
   </section>
 </template>
+
+<script lang="ts">
+export default {
+  name: 'DownloadCsv'};
+</script>
+
+<style scoped>
+.download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #881866; /* Green */
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.download-button:hover {
+  background-color: #C7215D;
+}
+</style>

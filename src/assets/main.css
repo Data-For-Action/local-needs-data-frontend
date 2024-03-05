@@ -361,10 +361,8 @@ body {
 .main-page {
   align-items: center;
   display: flex;
-  width: 80%;
+  width: 90%;
 }
-
-/*navbar styling - simple in brand colours*/
 
 .navbar {
   display: flex;
@@ -374,11 +372,10 @@ body {
   padding: 0.1em;
   color: #fff;
   max-height: 80px;
-  
 }
 
 .navbar ul {
-  display: flex;
+  display: flex; /* Ensure the links are displayed by default */
   gap: 20px;
   list-style-type: none;
   padding: 0 20px;
@@ -387,20 +384,37 @@ body {
   color: #19a974;
 }
 
-
 .navbar h1 {
   flex: 1;
   text-align: center;
 }
 
+/* Hide the menu icon by default and only show it below 640px */
+.menu-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
 @media (max-width: 640px) {
-  .navbar{
+  .navbar {
     flex-direction: column;
-    text-align: center
+    text-align: center;
   }
 
-  .navbar ul {
-    flex-direction: column
+ 
+  .navbar ul {    
+    flex-direction: column;
+    background-color: #881866;
+  }
+
+  /* The menu icon should be displayed only in narrow viewports */
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
   }
 }
 
@@ -408,7 +422,6 @@ body {
 .main-container {
   margin: 0 auto;
   width: 80%;
-  /* Adjust as needed */
   padding-top: 10px;
  
 }
@@ -537,16 +550,24 @@ body {
 }
 
 .save-button:hover {
-  background: linear-gradient(45deg, #57a957, #4CAF50); /* Gradient background on hover */
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Larger shadow on hover */
+  background: linear-gradient(45deg, #57a957, #4CAF50); 
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); 
 }
 
 .save-container{
   
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Centre horizontally */
-    align-items: center; /* Centre vertically */
-    height: 200px; /* Set to desired height */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 200px; 
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100%; 
 }
 
 

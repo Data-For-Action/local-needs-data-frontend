@@ -36,7 +36,7 @@
       <div class="tc">
     <h3>For an example of what your data might look like please use the buttons below to download a sample csv with data</h3>    
     <div class="button-container">
-    <a href="/data1.csv" download="DataFile1.csv" class="download-button">Download Simple Time based example</a>
+    <a href="/local-needs-data-frontend/data1.csv" download="DataFile1.csv" class="download-button">Download Simple Time based example</a>
 
     
     <a href="/local-needs-data-frontend/data2.csv" download="DataFile2.csv" class="download-button">Download Location based example</a>

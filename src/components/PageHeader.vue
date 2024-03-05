@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
-// Defines a reactive reference for tracking the menu's open/closed state with an explicit type
 const isMenuOpen = ref<boolean>(false);
 
-// Function to toggle the state of 'isMenuOpen'
+// Set the initial state based on viewport width
+onMounted(() => {
+  isMenuOpen.value = window.innerWidth > 640;
+});
+
 function toggleMenu(): void {
-  console.log('Menu toggled. Current state:', !isMenuOpen.value); // This should log the expected state change
   isMenuOpen.value = !isMenuOpen.value;
 }
 </script>
@@ -16,7 +18,7 @@ function toggleMenu(): void {
 <template>
   <nav class="navbar">
     <button @click="toggleMenu" class="menu-icon" aria-label="Toggle navigation menu">
-      <!-- SVG for the menu icon -->
+      
       <svg viewBox="0 0 100 80" width="40" height="40" fill="#fff">
         <rect width="100" height="20"></rect>
         <rect y="30" width="100" height="20"></rect>

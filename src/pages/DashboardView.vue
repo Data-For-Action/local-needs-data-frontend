@@ -69,7 +69,7 @@ export default defineComponent({
       {
         title: "Requests for Support ",
         value: "611k",
-        subtitle: "Number of requests for support received from new clients	18-64 202/23		"
+        subtitle: "Number of requests for support received from new clients	18-64 2022/23		"
       }
     ],
       possible_columns: [],

@@ -47,7 +47,7 @@ li {
 }
 
 h1, h2, h3, h4, h5, h6, ul.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Arial", sans-serif;
   font-weight: 600
 }
 
@@ -169,6 +169,18 @@ p {
   --dropbox-color: #FFCA05
 }
 
+.light-organge-npc{
+  background-color: #FB9C1C;
+}
+
+.dark-purple-npc{
+background-color: #662583;
+}
+
+.dark-orange-npc{
+background-color: #EE4023
+
+}
 label.required:after {
   content: ' *';
   color: red;

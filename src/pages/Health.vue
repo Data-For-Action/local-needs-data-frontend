@@ -18,6 +18,7 @@ import {
 import DashboardMap from '../components/DashboardMap.vue'
 
 
+
 interface PossibleColumn {
   dataset: string
   columns: Components.Schemas.PotentialColumn[]
@@ -32,6 +33,14 @@ interface BaseComponentData {
   selected_times: Components.Schemas.PotentialFilter[]
   data: Components.Schemas.ChartData | null
   chart_type: Components.Schemas.DashboardType | null | 'measure_over_area_map'
+  kpiData: Kpi[];
+
+}
+
+interface Kpi {
+  title: string;
+  value: string;
+  subtitle: string;
 }
 
 ChartJS.register(
@@ -233,143 +242,40 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class ="tc">
-    <h3 class="tc"> Welcome to the Local Needs Dashboard. </h3>
+ <div class ="tc ">
+ 
+    <h3 class="tc f2">Welcome to the Local Needs Insight tool</h3>
       <p>Here you will find curated data for you to explore and you will also find tools to create your own charts and maps
 
       </p>
   </div>
-  <div class="kpi-container">
+  <div class="ba bw1 " >
+    
+  <!-- Navigation Bar with Tachyons -->
+  <nav class="flex flex-wrap justify-between items-start bg-white mb0 w-100">
+  <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="/health">Health & Social</router-link>
+  <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="/support">Support</router-link>
+  <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="">Advice</router-link>
+  <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="">Link 4</router-link>
+  <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="/explore">Explore</router-link>
+</nav>
+  
+  <div class="flex flex-wrap justify-between items-stetch bg-white mb0 w-100">
     <div class="kpi-card" v-for="(kpi, index) in kpiData" :key="index">
       <div class="kpi-title">{{ kpi.title }}</div>
-      <div class="kpi-value">{{ kpi.value }}</div>
+      <div class="f1 fw7 white">{{ kpi.value }}</div>
       <div class="kpi-subtitle">{{ kpi.subtitle }}</div>
       
     </div>
    
   </div>
-  <div class="save-container">
-  <button class="save-button" @click="saveAsSvg(index)">Save as SVG</button>
-</div>
+  
 <iframe src='https://flo.uri.sh/visualisation/17020685/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17020685/?utm_source=embed&utm_campaign=visualisation/17020685' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 <iframe src='https://flo.uri.sh/visualisation/17023723/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17023723/?utm_source=embed&utm_campaign=visualisation/17023723' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 <iframe src='https://flo.uri.sh/visualisation/17023803/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17023803/?utm_source=embed&utm_campaign=visualisation/17023803' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
-
-
-<div>
-<h1 class="property-text"> Below you can explore other data within the Databank</h1>
-<h5> To create your own charts</h5>
-<ol><li>Choose a chart type</li>
-  <li>Select the dataset you would like to explore using the drop down</li>
-  <li>Select either areas or times to explore using the further drop downs</li>
-
-
-</ol>
-
 </div>
-  
-  <div class="pa5 pt2 tc property-text">
-  <h3> 
-        Create your own charts and maps below
-      </h3>
-    </div>
-  <div class="dashboard">
-    
-    <div class="">
-      <div class="property-text">
-        <h3>Chart type</h3>
-        <label class="db mb1"
-          ><input
-            type="radio"
-            id="line"
-            name="chart_type"
-            value="measure_over_time"
-            v-model="chart_type"
-          />
-          Compare measures over time</label
-        >
-        <label class="db mb1"
-          ><input
-            type="radio"
-            id="line"
-            name="chart_type"
-            value="area_over_time"
-            v-model="chart_type"
-          />
-          Compare areas over time</label
-        >
-        <label class="db mb1"
-          ><input
-            type="radio"
-            id="line"
-            name="chart_type"
-            value="measure_over_area"
-            v-model="chart_type"
-          />
-          Compare measures by area (bar chart)</label
-        >
-        <label class="db mb1"
-          ><input
-            type="radio"
-            id="line"
-            name="chart_type"
-            value="measure_over_area_map"
-            v-model="chart_type"
-          />
-          Compare measures by area (map)</label
-        >
-      </div>
-      <div class="mb3 pt4" v-if="chart_type">
-        <Multiselect
-          v-model="selected_columns"
-          placeholder="Select columns"
-          label="name"
-          track-by="id"
-          :options="possible_columns"
-          :multiple="true"
-          group-values="columns"
-          group-label="dataset"
-          :group-select="false"
-        >
-        </Multiselect>
-      </div>
-      <div class="mb3" v-if="possible_areas && possible_areas.length">
-        <Multiselect
-          v-model="selected_areas"
-          placeholder="Select areas"
-          label="name"
-          track-by="id"
-          :options="possible_areas"
-          :multiple="true"
-        >
-        </Multiselect>
-      </div>
-      <div class="mb3" v-if="possible_times && possible_times.length">
-        <Multiselect
-          v-model="selected_times"
-          placeholder="Select times"
-          label="name"
-          track-by="id"
-          :options="possible_times"
-          :multiple="true"
-        >
-        </Multiselect>
-      </div>
-    </div>
-    
-    <div class="pa3">
-      <div v-if="!data">
-        <h3 class="standard-purple-text">&larr; Select chart type and dataset to display a chart</h3>
-      </div>
-      <dashboard-map v-else-if="chart_type == 'measure_over_area_map'" :data="data"></dashboard-map>
-      <bar-chart
-        v-else-if="chart_type == 'measure_over_area'"
-        :data="data"
-        :options="chartOptions"
-      />
-      <line-chart v-else :data="data" :options="chartOptions" />
-    </div>
-  </div>
+
+
 </template>
 
 <style scoped>
@@ -406,7 +312,7 @@ export default defineComponent({
 .kpi-card{
   flex-basis: 100%;
   margin: 10px;
-  background-color: var(--primary-color); 
+  background-color: #662583 ; 
   color: white;
   padding: 20px;
   border-radius: 5px;

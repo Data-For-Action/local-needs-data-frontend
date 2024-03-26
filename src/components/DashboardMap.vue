@@ -182,7 +182,8 @@ export default {
 .local-needs-leaflet-container {
   background: transparent;
   font-family: 'Roboto', sans-serif;
-  height: 800px;
+  height: 100%;
+  min-height: 500px;
  
 }
 

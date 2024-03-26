@@ -1,12 +1,16 @@
 import DatasetView from './pages/DatasetView.vue'
 import DocumentationView from './pages/DocumentationView.vue'
-import DashboardView from './pages/DashboardView.vue'
+import Support from './pages/Support.vue'
 import * as VueRouter from 'vue-router'
+import Health from './pages/Health.vue'
+import Explore from './pages/Explore.vue'
 
 const routes = [
     { path: '/', component: DatasetView },
-    { path: '/dashboard', component: DashboardView },
+    { path: '/health', component: Health },
     { path: '/documentation', component: DocumentationView },
+    { path: '/support', component: Support},
+    { path: '/explore', component: Explore},
 ]
 
 const router = VueRouter.createRouter({

@@ -311,7 +311,7 @@ export default defineComponent({
       <!-- Chart Display Section -->
       
       <div class="pa3">
-        <h3 class = "f3 tc standard-purple-text">3. Your chart is dispayed here</h3>
+        <h3 class = "f3 tc standard-purple-text">3. Your chart is displayed here</h3>
         <div v-if="!data">
          
         </div>

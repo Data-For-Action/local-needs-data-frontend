@@ -13,6 +13,11 @@
               >Documentation</router-link
             >
           </li>
+          <li>
+            <router-link to="/" class="h4 white-80 hover-pink"
+              >Upload data</router-link
+            >
+          </li>
         </ul>
       </div>
 

@@ -66,19 +66,19 @@ export default defineComponent({
     return {
       kpiData: [
       {
-        title: "Spend on Health and Social Care ",
-        value: "£28.3m",
-        subtitle: "Total Spend on Adult Social Care in England 2022-23 "
+        title: "Number of Charities ",
+        value: "163,959",
+        subtitle: "In the UK in 20/21"
       },
       {
-        title: "Grants to Voluntary Organisations",
-        value: "£200k",
-        subtitle: "Grants to Voluntary Organisations via LA for Health and Social Care"
+        title: "Number of employees",
+        value: "961,855",
+        subtitle: "In the UK charity sector 20/21"
       },
       {
-        title: "Requests for Support ",
-        value: "611k",
-        subtitle: "Number of requests for support received from new clients	18-64 2022/23		"
+        title: "Number of months",
+        value: "6.9",
+        subtitle: "An average UK charity can operate on their reserves"
       }
     ],
       possible_columns: [],
@@ -270,9 +270,9 @@ export default defineComponent({
    
   </div>
   
-<iframe src='https://flo.uri.sh/visualisation/17020685/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17020685/?utm_source=embed&utm_campaign=visualisation/17020685' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
-<iframe src='https://flo.uri.sh/visualisation/17023723/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17023723/?utm_source=embed&utm_campaign=visualisation/17023723' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
-<iframe src='https://flo.uri.sh/visualisation/17023803/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17023803/?utm_source=embed&utm_campaign=visualisation/17023803' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+  <iframe src='https://flo.uri.sh/visualisation/17325320/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17325320/?utm_source=embed&utm_campaign=visualisation/17325320' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+  <iframe src='https://flo.uri.sh/visualisation/17325536/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17325536/?utm_source=embed&utm_campaign=visualisation/17325536' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+  <iframe src='https://flo.uri.sh/visualisation/17325079/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17325079/?utm_source=embed&utm_campaign=visualisation/17325079' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 </div>
 
 

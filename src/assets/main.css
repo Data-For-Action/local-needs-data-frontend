@@ -430,10 +430,18 @@ body {
   }
 }
 
+/* Custom CSS file or <style> tag in your Vue component */
+@media screen and (min-width: 620px) and (max-width: 780px) {
+  #card-container > div { /* Targeting direct children which are the cards */
+    flex-basis: 100%; /* Forces cards to take full width */
+  }
+}
+
+
 
 .main-container {
   margin: 0 auto;
-  width: 80%;
+  width: 95%;
   padding-top: 10px;
  
 }

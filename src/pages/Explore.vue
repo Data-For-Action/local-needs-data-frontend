@@ -244,16 +244,14 @@ export default defineComponent({
     </p>
   </div>
 
-  <div class="ba bw1">
-    <!-- Navigation Bar with Tachyons -->
+  <div class="ba bw0">
     <nav class="flex flex-wrap justify-between items-start bg-white mb0 w-100">
   <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="/health">Health & Social</router-link>
   <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="/support">Support</router-link>
   <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="">Advice</router-link>
-  <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="">Link 4</router-link>
-  <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="">Explore</router-link>
+  <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="/charity">Charity</router-link>
+  <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="/explore">Explore</router-link>
 </nav>
-
 
 
     <!-- Additional Information Section -->

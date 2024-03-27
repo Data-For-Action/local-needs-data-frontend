@@ -5,6 +5,7 @@ import * as VueRouter from 'vue-router'
 import Health from './pages/Health.vue'
 import Explore from './pages/Explore.vue'
 import CharitySector from './pages/CharitySector.vue'
+import Context from './pages/Context.vue'
 
 const routes = [
     { path: '/', component: DatasetView },
@@ -13,6 +14,7 @@ const routes = [
     { path: '/support', component: Support},
     { path: '/explore', component: Explore},
     { path: '/charity', component: CharitySector},
+    {path: '/context', component: Context},
 
 ]
 

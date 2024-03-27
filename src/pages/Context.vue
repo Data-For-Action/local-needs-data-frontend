@@ -33,6 +33,14 @@ interface BaseComponentData {
   selected_times: Components.Schemas.PotentialFilter[]
   data: Components.Schemas.ChartData | null
   chart_type: Components.Schemas.DashboardType | null | 'measure_over_area_map'
+  kpiData: Kpi[];
+
+}
+
+interface Kpi {
+  title: string;
+  value: string;
+  subtitle: string;
 }
 
 ChartJS.register(
@@ -234,97 +242,53 @@ export default defineComponent({
 </script>
 
 <template>
-  
-  <div class="tc ">
-  
-    <!-- Welcome Section -->
-    <h3 class="tc f2"> Welcome to the Local Needs Insight tool </h3>
-    <p>
-      Here you will find curated data for you to explore and you will also find tools to create your own charts and maps
-    </p>
-  </div>
+ <div class ="tc w-100 ">
+ 
+    <h3 class="tc f2">Welcome to the Local Needs Insight tool</h3>
+      <p>Here you will find curated data for you to explore and you will also find tools to create your own charts and maps
 
-  <div class="ba bw0">
-    <nav class="flex flex-wrap justify-between items-start bg-white mb0 w-100">
+      </p>
+  </div>
+  <div class="ba bw0 " >
+    
+  
+  <nav class="flex flex-wrap justify-between items-start bg-white mb0 w-100">
   <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="/health">Health & Social</router-link>
   <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="/support">Support</router-link>
   <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="/context">Context</router-link>
   <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="/charity">Charity</router-link>
   <router-link class="f4 link dim ph3 pv2 mb2 dib white dark-purple-npc flex-auto w-100 w-auto-ns ba b--white" to="/explore">Explore</router-link>
 </nav>
-
-
-    <!-- Additional Information Section -->
-    <article class="cf mt0">
-    <div>
-      <h1 class="f2 tc mt0 mb1 standard-purple-text "> Below you can explore other data within the Databank</h1>             
-        <div class="">
+  
+  <div id="card-container" class="flex flex-wrap justify-between items-stetch bg-white mb0 w-100">
+    <div class="kpi-card" v-for="(kpi, index) in kpiData" :key="index">
+      <div class="kpi-title">{{ kpi.title }}</div>
+      <div class="f1 fw7 white">{{ kpi.value }}</div>
+      <div class="kpi-subtitle">{{ kpi.subtitle }}</div>
       
     </div>
+   
   </div>
   
-</article>
 
-  
 
-    <!-- Dashboard Section -->
-    
-      <div class="mt0">
-        <div class="tc">
-          <!-- Chart Type Selection -->
-          <h3 class = "f3 tc standard-purple-text">1. Select your Chart type</h3>
-          <label class="db mb1 tc">
-            <input type="radio" id="line" name="chart_type" value="measure_over_time" v-model="chart_type" />
-            Compare measures over time
-          </label>
-          <label class="db mb1 tc">
-            <input type="radio" id="line" name="chart_type" value="area_over_time" v-model="chart_type" />
-            Compare areas over time
-          </label>
-          <label class="db mb1">
-            <input type="radio" id="line" name="chart_type" value="measure_over_area" v-model="chart_type" />
-            Compare measures by area (bar chart)
-          </label>
-          <label class="db mb1">
-            <input type="radio" id="line" name="chart_type" value="measure_over_area_map" v-model="chart_type" />
-            Compare measures by area (map)
-          </label>
-        </div>
-        
+<iframe width="100%" height="600" frameborder="0" title="Felt Map" src="https://felt.com/embed/map/Local-Needs-Curated-data-example-copy-9A9C9BTTO4xTIaIBNrZjLnOqD?loc=52.669%2C-2.004%2C7.11z&legend=1&logo=1&link=1" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<iframe src='https://flo.uri.sh/visualisation/17330949/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17330949/?utm_source=embed&utm_campaign=visualisation/17330949' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+<iframe src='https://flo.uri.sh/visualisation/17331223/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17331223/?utm_source=embed&utm_campaign=visualisation/17331223' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 
-        <!-- Multiselect Components for Chart Configuration -->
-        <div class="mb3 pt4" v-if="chart_type">
-          <h3 class = "f3 tc standard-purple-text">2. Select the data and filters for you chart</h3>
-          <Multiselect v-model="selected_columns" placeholder="Select columns" label="name" track-by="id" :options="possible_columns" :multiple="true" group-values="columns" group-label="dataset" :group-select="false" />
-        </div>
-        <div class="mb3" v-if="possible_areas && possible_areas.length">
-          <Multiselect v-model="selected_areas" placeholder="Select areas" label="name" track-by="id" :options="possible_areas" :multiple="true" />
-        </div>
-        <div class="mb3 property-text-heading" v-if="possible_times && possible_times.length">
-          <Multiselect v-model="selected_times" placeholder="Select times" label="name" track-by="id" :options="possible_times" :multiple="true" />
-        </div>
-      </div>
-      
 
-      <!-- Chart Display Section -->
-      
-      <div class="pa3">
-        <h3 class = "f3 tc standard-purple-text">3. Your chart is displayed here</h3>
-        <div v-if="!data">
-         
-        </div>
-        <dashboard-map v-else-if="chart_type == 'measure_over_area_map'" :data="data"></dashboard-map>
-        <bar-chart v-else-if="chart_type == 'measure_over_area'" :data="data" :options="chartOptions" />
-        <line-chart v-else :data="data" :options="chartOptions" />
-      </div>
-     
-  </div> 
+</div>
+
+
 </template>
-
 
 <style scoped>
 
-
+.dashboard {
+  display: grid;  
+  grid-template-columns: 2fr;
+  min-height: 80vh;
+}
 
 @media (min-width: 641px) {
   .dashboard {
@@ -374,7 +338,11 @@ export default defineComponent({
   }
 }
 
-
+.twoCharts {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center; 
+}
 
 .flourish-embed-iframe {
   display: block; 

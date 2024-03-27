@@ -313,11 +313,11 @@ export default defineComponent({
 
 .kpi-card{
   flex-basis: 100%;
-  margin: 10px;
+  margin: 0px;
   background-color: #662583 ; 
   color: white;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 0px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   

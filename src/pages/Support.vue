@@ -309,7 +309,7 @@ export default defineComponent({
 
 .kpi-card{
   flex-basis: 100%;
-  margin: 10px;
+  margin: 0px;
   background-color: var(--primary-color); 
   color: white;
   padding: 20px;

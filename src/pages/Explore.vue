@@ -235,14 +235,7 @@ export default defineComponent({
 
 <template>
   
-  <div class="tc ">
   
-    <!-- Welcome Section -->
-    <h3 class="tc f2"> Welcome to the Local Needs Insight tool </h3>
-    <p>
-      Here you will find curated data for you to explore and you will also find tools to create your own charts and maps
-    </p>
-  </div>
 
   <div class="ba bw0">
     <nav class="flex flex-wrap justify-between items-start bg-white mb0 w-100">

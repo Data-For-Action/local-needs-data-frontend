@@ -603,3 +603,8 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   
 }
+
+.router-link-active {
+  background-color: #C7215D; /* Replace #yourColor with the hex code of the color you want */
+  border-color: #C7215D; /* Optionally change the border color as well */
+}

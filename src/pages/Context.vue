@@ -19,6 +19,7 @@ import DashboardMap from '../components/DashboardMap.vue'
 
 
 
+
 interface PossibleColumn {
   dataset: string
   columns: Components.Schemas.PotentialColumn[]
@@ -124,6 +125,8 @@ export default defineComponent({
           }
         })
     }, 
+
+    
    
 
   },
@@ -242,13 +245,7 @@ export default defineComponent({
 </script>
 
 <template>
- <div class ="tc w-100 ">
  
-    <h3 class="tc f2">Welcome to the Local Needs Insight tool</h3>
-      <p>Here you will find curated data for you to explore and you will also find tools to create your own charts and maps
-
-      </p>
-  </div>
   <div class="ba bw0 " >
     
   
@@ -281,6 +278,8 @@ export default defineComponent({
 
 </div>
 
+
+  
 
 </template>
 
